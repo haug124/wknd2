@@ -1,0 +1,29 @@
+.social-links-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.social-links-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.social-links-table td {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.icon-cell img {
+  width: 24px; /* Adjust size as needed */
+  height: 24px;
+}
+
+.link-cell a {
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link-cell a:hover {
+  text-decoration: underline;
+}
