@@ -27,3 +27,17 @@
 .link-cell a:hover {
   text-decoration: underline;
 }
+.icon-cell {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-cell:has(span:contains('twitter')) {
+  background: url('/icons/twitter.svg') no-repeat center;
+  background-size: contain;
+}
+
+.icon-cell:has(span:contains('instagram')) {
+  background: url('/icons/instagram.svg') no-repeat center;
+  background-size: contain;
+}
