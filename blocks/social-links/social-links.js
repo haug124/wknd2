@@ -13,27 +13,16 @@ export default function decorate(block) {
     const cols = [...row.children];
     if (cols.length < 2) return; // Skip invalid rows
 
-    let iconText = cols[0].textContent.trim().toLowerCase();
-    const linkElement = cols[1].querySelector('a');
+    const iconTd = document.createElement('td');
+    iconTd.classList.add('icon-cell');
 
+    // Preserve the existing CMS-generated icon formatting
+    iconTd.innerHTML = cols[0].innerHTML;
+
+    const linkElement = cols[1].querySelector('a');
     if (!linkElement) return;
 
     const tr = document.createElement('tr');
-    
-    const iconTd = document.createElement('td');
-    iconTd.classList.add('icon-cell');
-    const iconSpan = document.createElement('span');
-
-    // Use Franklin notation for icons
-    if (iconText.includes('twitter')) {
-      iconSpan.textContent = ':twitter:';
-    } else if (iconText.includes('instagram')) {
-      iconSpan.textContent = ':instagram:';
-    }
-
-    console.log(`Setting Franklin icon for ${iconText}:`, iconSpan.textContent);
-
-    iconTd.appendChild(iconSpan);
     tr.appendChild(iconTd);
 
     const linkTd = document.createElement('td');
